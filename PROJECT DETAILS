@@ -1,0 +1,11 @@
+INTRODUCTION
+the Natural Language Driven Data Analytics and Visualization System aims to bridge the gap between complex data analysis and user accessibility. This system enables users to interact with datasets using natural language queries, eliminating the need for coding or query-writing expertise. By leveraging Large Language Models (LLMs) and advanced data visualization tools, the system interprets user queries, performs relevant data analysis, and automatically generates meaningful visualizations such as bar charts, line graphs, and pie charts.
+
+This project integrates emerging technologies including Artificial Intelligence, Natural Language Processing, and Data Visualization, providing a user-friendly and intelligent data analytics platform. The proposed solution improves efficiency, reduces dependency on technical personnel, and democratizes data access for decision-makers.
+
+OBJECTIVES
+1.To develop a system that allows users to analyze datasets using natural language queries.
+2.To eliminate the requirement of SQL or programming knowledge for data analysis.
+3.To automatically generate appropriate data visualizations based on user intent.
+4.To provide accurate, interactive, and easy-to-understand analytical insights.
+5.To demonstrate the practical application of LLMs in real-world data analytics.
