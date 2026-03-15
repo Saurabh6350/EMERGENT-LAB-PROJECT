@@ -230,13 +230,9 @@ This project is licensed under the MIT License — feel free to use it for perso
 
 ## 👨‍💻 Author
 
-**Saurabh** — [@Saurabh6350](https://github.com/Saurabh6350)
-
----
-
-## ⭐ Support
+**Sourabh Biswas and Akshaye chitre ** — [@Saurabh6350](https://github.com/Saurabh6350)
 
 If you found this project useful, please consider giving it a **star** on GitHub!  
 It helps others discover the project.
 
-> Built with ❤️ using React and Groq AI
+
