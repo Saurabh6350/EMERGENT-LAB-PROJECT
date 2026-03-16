@@ -1,238 +1,113 @@
-# 📊 DATA ANALYTICS PLATFORM
+# 📊 AI-Powered Natural Language Data Analytics Platform
 
-> A full-featured, AI-powered data analytics web app built with React.  
-> Upload any CSV file and instantly get charts, SQL queries, AI insights, and more — all in your browser.
+## 🚀 Project Overview
 
-![React](https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react)
-![AI](https://img.shields.io/badge/AI-Groq%20LLaMA%203.3-F55036?style=flat)
-![Free](https://img.shields.io/badge/API-Free%20Tier-34D399?style=flat)
-![License](https://img.shields.io/badge/License-MIT-818CF8?style=flat)
+This project is an AI-driven data analytics web application that allows users to upload datasets and perform advanced analytics using natural language queries.
 
----
+The system integrates Artificial Intelligence concepts, automated data processing, visualization, natural language SQL querying, AutoML predictive analytics, and automated report generation.
 
-## 🚀 Live Demo
-
-> Run locally in 3 commands — see setup below
+The platform simulates modern intelligent analytics tools such as Power BI + ChatGPT + AutoML platforms.
 
 ---
 
-## ✨ Features
+## 🎯 Objectives
 
-| Tab | What It Does |
-|---|---|
-| **Overview** | Column stats, data types, live search & filter across all rows |
-| **Charts** | Scatter, line, bar, pie, heatmap, histogram — with 📌 pin to dashboard |
-| **AI Charts** | Describe a chart in plain English → AI builds it automatically |
-| **SQL** | Ask questions in plain English → AI writes and runs the SQL |
-| **Insights** | AI generates 6 business findings with recommendations |
-| **Clean** | Remove duplicates, fill nulls, trim whitespace, rename columns |
-| **Compare** | Load 2 CSV files and compare them side by side with AI analysis |
-| **Chat** | Have a full conversation with your data |
-| **Dashboard** | Pin your favourite charts into a personal dashboard |
-| **Export** | Download CSV, generate PDF report, copy summary to clipboard |
-
-### 🎨 Extra Features
-- **Dark / Light theme** toggle
-- **Multiple CSV files** — load and switch between files in the header
-- **Column Calculator** — create new columns using formulas like `[Price] * [Quantity]`
-- **Smart AI Suggestions** — AI recommends the best visualizations for your data
-- **Query History** — saves your last 10 SQL queries
+- Enable non-technical users to analyze datasets easily  
+- Provide automated insights using AI techniques  
+- Allow conversational interaction with data  
+- Automate machine learning model training and prediction  
+- Generate downloadable analytics reports  
 
 ---
 
-## 🛠️ Tech Stack
+## 🧠 Components Used in the Project
 
-- **Frontend** — React 18
-- **AI** — Groq API (LLaMA 3.3 70B) — free tier, 14,400 requests/day
-- **Charts** — Built from scratch using pure SVG
-- **Styling** — Inline styles with CSS variables for theming
-- **No backend** — runs entirely in the browser
+### 1️⃣ Artificial Intelligence Assistant
 
----
+The AI assistant enables conversational interaction with the dataset.
 
-## ⚡ Quick Start
+Users can ask questions like:
 
-### 1 — Prerequisites
+- How many rows are in the dataset?
+- Show dataset summary
+- Show missing values
 
-Make sure you have **Node.js** installed.  
-Download from 👉 https://nodejs.org (click the LTS button)
-
-Check it is installed by opening CMD and typing:
-```bash
-node --version
-```
-You should see a version number like `v20.11.0`
+The assistant processes the dataset context and returns intelligent responses.
 
 ---
 
-### 2 — Get a Free Groq API Key
+### 2️⃣ Natural Language to SQL Engine
 
-1. Go to 👉 https://console.groq.com
-2. Sign up with Google or email — it is free
-3. Click **API Keys** in the left sidebar
-4. Click **Create API Key** → copy the key (starts with `gsk_...`)
+The system converts natural language queries into SQL statements.
 
-> **Free tier:** 14,400 requests per day — more than enough for personal use
+Example queries:
 
----
+- count rows  
+- average glucose  
+- show all data  
 
-### 3 — Clone or Download the Project
-
-**Option A — Clone with Git:**
-```bash
-git clone https://github.com/Saurabh6350/EMERGENT-LAB-PROJECT.git
-cd EMERGENT-LAB-PROJECT
-```
-
-**Option B — Download ZIP:**
-1. Click the green **Code** button on this page
-2. Click **Download ZIP**
-3. Unzip the folder
+These queries are executed on an in-memory SQLite database created from the uploaded dataset.
 
 ---
 
-### 4 — Add Your API Key
+### 3️⃣ Automatic Data Processing Module
 
-1. Find the file called `.env.example` in the project folder
-2. Make a copy of it and rename the copy to `.env`
-3. Open `.env` with Notepad and replace the placeholder with your key:
+After dataset upload, the system automatically performs:
 
-```
-REACT_APP_GROQ_API_KEY=gsk_your_actual_key_here
-```
+- duplicate removal  
+- missing value handling  
+- categorical feature encoding  
 
-4. Save the file
-
-> ⚠️ Never share your `.env` file or commit it to GitHub — it is already in `.gitignore`
+This ensures the dataset is ready for analytics and machine learning.
 
 ---
 
-### 5 — Install and Run
+### 4️⃣ AutoML Predictive Analytics Module
 
-Open CMD inside the project folder and run:
+The system automatically:
 
-```bash
-npm install
-```
-Wait 1–2 minutes for packages to download, then:
+- detects the target column (last column)
+- determines whether the problem is classification or regression
+- trains multiple machine learning models
+- selects the best performing model
 
-```bash
-npm start
-```
+Models used include:
 
-Your browser opens automatically at **http://localhost:3000** 🎉
-
----
-
-## 📁 Project Structure
-
-```
-EMERGENT-LAB-PROJECT/
-├── public/
-│   └── index.html          # HTML entry point
-├── src/
-│   ├── App.jsx             # Main application (all features in one file)
-│   └── index.js            # React entry point
-├── .env.example            # API key template
-├── .gitignore              # Prevents .env and node_modules from uploading
-├── package.json            # Project dependencies
-└── README.md               # This file
-```
+- Logistic / Linear Regression  
+- Decision Tree  
+- Random Forest  
 
 ---
 
-## 🎯 How to Use
+### 5️⃣ Prediction Interface
 
-### Upload Data
-- Drag and drop any `.csv` file onto the upload area
-- Or click to browse your computer
-- You can load **multiple CSV files** at once
+After training:
 
-### Natural Language SQL
-Type questions like:
-- *"Show top 10 rows by sales"*
-- *"Average salary by department"*
-- *"Count rows where status equals active"*
-
-The AI converts your question to SQL and runs it instantly.
-
-### AI Chart Builder
-Go to the **AI Charts** tab and type things like:
-- *"Show me revenue by region as a bar chart"*
-- *"Compare age and income"*
-- *"Which category has the most orders"*
-
-### Column Calculator
-Go to **Clean** tab → Column Calculator.  
-Create new columns using formulas:
-- `[Price] * [Quantity]` → calculates total
-- `[Salary] / 12` → calculates monthly salary
-- `[Score] * 100` → converts to percentage
+- users enter feature values  
+- system predicts output using the trained model  
 
 ---
 
-## 🚀 Deploy Online for Free
+### 6️⃣ AI Analytics Report Generator
 
-### Deploy on Vercel (Recommended)
+The system generates a downloadable PDF report containing:
 
-1. Push your code to GitHub (without the `.env` file)
-2. Go to 👉 https://vercel.com → sign in with GitHub
-3. Click **New Project** → import your repository
-4. Under **Environment Variables** add:
-   - Name: `REACT_APP_GROQ_API_KEY`
-   - Value: your Groq API key
-5. Click **Deploy**
-
-Your app will be live at a free public URL in about 1 minute!
+- dataset insights  
+- model performance  
+- prediction result  
 
 ---
 
-## 🔧 Troubleshooting
+## ✨ Key Features
 
-| Problem | Fix |
-|---|---|
-| `npm` not recognized | Install Node.js from nodejs.org and restart CMD |
-| AI features not working | Check your `.env` file has the correct Groq API key |
-| `.env` file not visible | Enable hidden files — View → check Hidden Items |
-| `npm install` fails | Try `npm install --legacy-peer-deps` |
-| Port 3000 already in use | Press `Y` when asked to use a different port |
-| Quota exceeded error | You hit the free daily limit — wait until tomorrow, it resets automatically |
-
----
-
-## 📌 Roadmap
-
-- [ ] Support for Excel (.xlsx) files
-- [ ] Save and load dashboards
-- [ ] More chart types (box plot, bubble chart)
-- [ ] Multi-language support
-- [ ] Backend API for larger datasets
+- Upload any CSV dataset  
+- Conversational AI dataset assistant  
+- Natural language SQL querying  
+- Automatic dataset cleaning  
+- AutoML model selection  
+- Prediction interface  
+- Automated analytics PDF report  
 
 ---
 
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to:
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/your-feature`)
-3. Make your changes
-4. Commit (`git commit -m "Add your feature"`)
-5. Push (`git push origin feature/your-feature`)
-6. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License — feel free to use it for personal or commercial projects.
-
----
-
-## 👨‍💻 Author
-
-**Sourabh Biswas and Akshaye chitre ** — [@Saurabh6350](https://github.com/Saurabh6350)
-
-If you found this project useful, please consider giving it a **star** on GitHub!  
-It helps others discover the project.
-
-
+## 🏗️ System Workflow
