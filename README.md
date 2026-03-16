@@ -196,7 +196,7 @@ Through this project the following concepts are implemented:
 ## 👨‍💻 Authors
 
 - Sourabh Biswas  
-- Team Member  
+- Akshaye Chitre  
 
 ---
 
