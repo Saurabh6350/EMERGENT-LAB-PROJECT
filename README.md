@@ -110,4 +110,98 @@ The system generates a downloadable PDF report containing:
 
 ---
 
+
 ## 🏗️ System Workflow
+
+Dataset Upload  
+↓  
+Automatic Data Cleaning  
+↓  
+AI Assistant + SQL Query Engine  
+↓  
+Automatic Machine Learning Model Training  
+↓  
+Prediction Interface  
+↓  
+AI Analytics Report Generation  
+
+---
+
+## 🛠️ Technology Stack
+
+- Python  
+- Streamlit  
+- Pandas  
+- Scikit-learn  
+- SQLite  
+- ReportLab  
+
+---
+
+## ▶️ How to Run the Project
+
+### Step-1 Install Required Libraries
+
+```
+pip install -r requirements.txt
+```
+
+### Step-2 Run the Application
+
+```
+python -m streamlit run app.py
+```
+
+### Step-3 Open in Browser
+
+```
+http://localhost:8501
+```
+
+---
+
+## 🧪 Example Usage
+
+1. Upload a dataset  
+2. Ask AI assistant questions  
+3. Run natural language SQL queries  
+4. Train the model automatically  
+5. Enter feature values for prediction  
+6. Generate and download analytics report  
+
+---
+
+## 🎓 Learning Outcomes
+
+Through this project the following concepts are implemented:
+
+- Artificial Intelligence driven analytics systems  
+- Natural language query processing  
+- automated machine learning pipelines  
+- data visualization and analytics workflows  
+- intelligent report generation  
+
+---
+
+## 🚀 Future Enhancements
+
+- Integration with real Large Language Model APIs  
+- Automatic dashboard generation  
+- Retrieval Augmented Generation (RAG) based dataset chat  
+- Cloud deployment  
+- Real-time data streaming analytics  
+
+---
+
+## 👨‍💻 Authors
+
+- Sourabh Biswas  
+- Team Member  
+
+---
+
+## ⭐ Conclusion
+
+This project demonstrates the integration of Artificial Intelligence, Data Analytics, and Automation to develop an intelligent analytics platform that simplifies data exploration, prediction, and reporting for end users.
+
+It highlights how modern AI technologies can enhance data-driven decision making.
