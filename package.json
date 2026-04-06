@@ -1,6 +1,6 @@
 {
-  "name": "data-analytics-platform",
-  "version": "4.0.0",
+  "name": "analytics-studio",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "test": "react-scripts test"
   },
   "browserslist": {
     "production": [">0.2%", "not dead", "not op_mini all"],
