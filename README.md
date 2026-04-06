@@ -1,207 +1,120 @@
-# 📊 AI-Powered Natural Language Data Analytics Platform
+# AI Data Analytics Studio — v2
+### Powered by Groq (Llama 3.3 70B) — 100% Free
 
-## 🚀 Project Overview
-
-This project is an AI-driven data analytics web application that allows users to upload datasets and perform advanced analytics using natural language queries.
-
-The system integrates Artificial Intelligence concepts, automated data processing, visualization, natural language SQL querying, AutoML predictive analytics, and automated report generation.
-
-The platform simulates modern intelligent analytics tools such as Power BI + ChatGPT + AutoML platforms.
+Upload any CSV → instant charts with tooltips, AI-powered intelligence, and actionable insights.
 
 ---
 
-## 🎯 Objectives
+## 🆕 What's New in v2 (7 Major Upgrades)
 
-- Enable non-technical users to analyze datasets easily  
-- Provide automated insights using AI techniques  
-- Allow conversational interaction with data  
-- Automate machine learning model training and prediction  
-- Generate downloadable analytics reports  
+### 1. Hover Tooltips on All Charts
+Every chart now shows exact values, labels, and percentages on hover.
+Works on: bar, line, scatter, pie, heatmap.
 
----
+### 2. Proper Axis Labels, Chart Titles & Legends
+All charts now have clear X/Y axis titles, a chart title, and color legends.
+Download any chart as a PNG image with the ⬇ PNG button.
 
-## 🧠 Components Used in the Project
+### 3. Download Chart as PNG
+Every chart has a download button — drop charts directly into PowerPoint, Word, or Slack.
+Uses SVG-to-canvas conversion for crisp, high-resolution output.
 
-### 1️⃣ Artificial Intelligence Assistant
+### 4. Automatic Anomaly Detection (runs on upload, no clicks needed)
+On every file upload the app automatically:
+- Detects missing values (per column, with % affected)
+- Flags statistical outliers (IQR method)
+- Finds duplicate rows
+- Identifies constant/zero-variance columns
+- Computes a Data Quality Score (0-100)
 
-The AI assistant enables conversational interaction with the dataset.
+Orange warning banner appears in the header if issues are found.
 
-Users can ask questions like:
+### 5. Date / Time Intelligence
+Automatically detects date columns from formats: YYYY-MM-DD, MM/DD/YYYY, Month DD YYYY, etc.
+New "DATETIME" tab lets you:
+- Group any numeric column by Year / Quarter / Month / Week
+- View a time series line chart
+- See a summary table with sum, average, count per period
+- Inspect date range and span for each date column
 
-- How many rows are in the dataset?
-- Show dataset summary
-- Show missing values
+### 6. Smart Correlation Finder
+Automatically computes all column-pair correlations on upload.
+New "CORRELATIONS" tab shows:
+- Top 5 strongest relationships with strength bars
+- Direction (positive/negative) and exact Pearson r value
+- "Explain Correlations" button gets AI plain-English narrative of what each correlation means for business
 
-The assistant processes the dataset context and returns intelligent responses.
+### 7. AI Customer Segmentation
+New "SEGMENTS" tab:
+- AI groups your rows into 3-4 named segments (e.g. "High-value loyalists", "At-risk occasionals")
+- Each segment gets a name, description, estimated size %, criteria, and an actionable insight
+- Shows recommended column name to add to your data
 
----
-
-### 2️⃣ Natural Language to SQL Engine
-
-The system converts natural language queries into SQL statements.
-
-Example queries:
-
-- count rows  
-- average glucose  
-- show all data  
-
-These queries are executed on an in-memory SQLite database created from the uploaded dataset.
-
----
-
-### 3️⃣ Automatic Data Processing Module
-
-After dataset upload, the system automatically performs:
-
-- duplicate removal  
-- missing value handling  
-- categorical feature encoding  
-
-This ensures the dataset is ready for analytics and machine learning.
-
----
-
-### 4️⃣ AutoML Predictive Analytics Module
-
-The system automatically:
-
-- detects the target column (last column)
-- determines whether the problem is classification or regression
-- trains multiple machine learning models
-- selects the best performing model
-
-Models used include:
-
-- Logistic / Linear Regression  
-- Decision Tree  
-- Random Forest  
+### 8. Goal-Based Analysis (unique — no other free tool has this)
+New "GOAL" tab:
+- Type a business goal: "Reduce churn by 20%", "Increase revenue", etc.
+- AI identifies which columns are relevant, surfaces 3 key findings from the actual data
+- Generates a data-driven 3-step action plan
+- Flags risk factors based on the data
 
 ---
 
-### 5️⃣ Prediction Interface
+## Tabs Overview
 
-After training:
-
-- users enter feature values  
-- system predicts output using the trained model  
-
----
-
-### 6️⃣ AI Analytics Report Generator
-
-The system generates a downloadable PDF report containing:
-
-- dataset insights  
-- model performance  
-- prediction result  
-
----
-
-## ✨ Key Features
-
-- Upload any CSV dataset  
-- Conversational AI dataset assistant  
-- Natural language SQL querying  
-- Automatic dataset cleaning  
-- AutoML model selection  
-- Prediction interface  
-- Automated analytics PDF report  
+| Tab | Description |
+|-----|-------------|
+| Overview | Column stats, search/filter, data table |
+| **Anomalies** 🆕 | Auto data quality report with quality score |
+| Charts | Scatter, line, bar, pie, heatmap, histogram — all with tooltips + PNG export |
+| AI Charts | AI chart builder + smart suggestions |
+| SQL | Natural language → SQL queries |
+| Insights | 6 AI business findings |
+| **Correlations** 🆕 | Top correlations + AI narrative |
+| **Segments** 🆕 | AI customer/row segmentation |
+| **Goal** 🆕 | Goal-based analysis & action plan |
+| **Datetime** 🆕 | Date column detection + time series |
+| Clean | Remove dupes, fill nulls, rename, calculator |
+| Compare | Compare two CSV files with AI |
+| Chat | AI Q&A about your data |
+| Dashboard | Pinned charts |
+| Export | CSV, PDF report, clipboard |
 
 ---
 
+## Setup
 
-## 🏗️ System Workflow
+### Step 1 — Get a FREE Groq API Key
+1. Go to → https://console.groq.com
+2. Sign up (free, no credit card)
+3. Go to API Keys → Create API Key
+4. Copy the key
 
-Dataset Upload  
-↓  
-Automatic Data Cleaning  
-↓  
-AI Assistant + SQL Query Engine  
-↓  
-Automatic Machine Learning Model Training  
-↓  
-Prediction Interface  
-↓  
-AI Analytics Report Generation  
+### Step 2 — Add Your API Key
+1. Copy `.env.example` → rename to `.env`
+2. Open `.env` and paste your key:
+   ```
+   REACT_APP_GROQ_API_KEY=gsk_XXXXXXXXXXXXXXXXXXXX
+   ```
 
----
-
-## 🛠️ Technology Stack
-
-- Python  
-- Streamlit  
-- Pandas  
-- Scikit-learn  
-- SQLite  
-- ReportLab  
-
----
-
-## ▶️ How to Run the Project
-
-### Step-1 Install Required Libraries
-
+### Step 3 — Install and Run
+```bash
+npm install
+npm start
 ```
-pip install -r requirements.txt
-```
-
-### Step-2 Run the Application
-
-```
-python -m streamlit run app.py
-```
-
-### Step-3 Open in Browser
-
-```
-http://localhost:8501
-```
+Opens at http://localhost:3000
 
 ---
 
-## 🧪 Example Usage
-
-1. Upload a dataset  
-2. Ask AI assistant questions  
-3. Run natural language SQL queries  
-4. Train the model automatically  
-5. Enter feature values for prediction  
-6. Generate and download analytics report  
+## Deploy Free on Vercel
+1. Push to GitHub
+2. vercel.com → New Project → import repo
+3. Add env var: `REACT_APP_GROQ_API_KEY` = your key
+4. Deploy — done
 
 ---
 
-## 🎓 Learning Outcomes
-
-Through this project the following concepts are implemented:
-
-- Artificial Intelligence driven analytics systems  
-- Natural language query processing  
-- automated machine learning pipelines  
-- data visualization and analytics workflows  
-- intelligent report generation  
-
----
-
-## 🚀 Future Enhancements
-
-- Integration with real Large Language Model APIs  
-- Automatic dashboard generation  
-- Retrieval Augmented Generation (RAG) based dataset chat  
-- Cloud deployment  
-- Real-time data streaming analytics  
-
----
-
-## 👨‍💻 Authors
-
-- Sourabh Biswas  
-- Akshaye Chitre  
-
----
-
-## ⭐ Conclusion
-
-This project demonstrates the integration of Artificial Intelligence, Data Analytics, and Automation to develop an intelligent analytics platform that simplifies data exploration, prediction, and reporting for end users.
-
-It highlights how modern AI technologies can enhance data-driven decision making.
+## Troubleshooting
+- `npm not found` → install Node.js from nodejs.org
+- AI shows error → check `.env` has correct key (starts with `gsk_`)
+- `.env` not visible → enable hidden files in your file explorer
+- Charts not downloading → try a different browser (Chrome recommended)
