@@ -138,7 +138,7 @@ function executeSimpleSQL(sql,rows){
   const whereMatch=sql.match(/WHERE\s+(.+?)(?:\s+GROUP BY|\s+ORDER BY|\s+LIMIT|$)/i);
   if(whereMatch){
     const m=whereMatch[1].trim().match(/(\w+)\s*(=|!=|>|<|>=|<=|LIKE)\s*'?([^']+)'?/i);
-    if(m){const[,col,op,val]=m;result=result.filter(r=>{const rv=r[col];const nv=Number(val);if(op==="=")return rv==val;if(op==="!=")return rv!=val;if(op===">")return Number(rv)>nv;if(op==="<")return Number(rv)<nv;if(op===">=")return Number(rv)>=nv;if(op==="<=")return Number(rv)<=nv;if(op.toUpperCase()==="LIKE")return String(rv).toLowerCase().includes(val.toLowerCase().replace(/%/g,""));return true;});}
+    if(m){const[,col,op,val]=m;result=result.filter(r=>{const rv=r[col];const nv=Number(val);if(op==="=")return rv===String(val)||Number(rv)===Number(val);if(op==="!=")return rv!==String(val)&&Number(rv)!==Number(val);if(op===">")return Number(rv)>nv;if(op==="<")return Number(rv)<nv;if(op===">=")return Number(rv)>=nv;if(op==="<=")return Number(rv)<=nv;if(op.toUpperCase()==="LIKE")return String(rv).toLowerCase().includes(val.toLowerCase().replace(/%/g,""));return true;});}
   }
   const groupMatch=sql.match(/GROUP BY\s+(\w+)/i);
   const selectMatch=sql.match(/SELECT\s+(.+?)\s+FROM/i);
@@ -641,7 +641,6 @@ export default function App(){
     setActiveTab("overview");
     // Auto-run anomaly detection
     const det=detectAnomalies(parsed.rows,colTypes);
-    const fileIdx=files.length; // approximate
     setAnomalies(a=>({...a,[name]:det}));
     // Auto-compute correlations
     const corrs=computeTopCorrelations(parsed.rows,colTypes);
@@ -865,8 +864,8 @@ export default function App(){
       {/* ── HEADER ── */}
       <div style={{borderBottom:`1px solid ${T.border}`,padding:"14px 28px",display:"flex",alignItems:"center",gap:14,background:T.surface,backdropFilter:"blur(8px)",position:"sticky",top:0,zIndex:50}}>
         <div style={{width:30,height:30,background:"linear-gradient(135deg,#6ee7b7,#818cf8)",borderRadius:8,display:"flex",alignItems:"center",justifyContent:"center",fontSize:15}}>◈</div>
-        <div><div style={{fontWeight:700,fontSize:14,letterSpacing:"0.05em"}}>DATA ANALYTICS PLATFORM</div>
-          <div style={{fontSize:9,color:T.faint,letterSpacing:"0.08em"}}>v2 · TOOLTIPS · PNG EXPORT · ANOMALY AI · DATE INTEL · GOAL ANALYSIS · SEGMENTS · CORRELATIONS</div>
+        <div><div style={{fontWeight:700,fontSize:14,letterSpacing:"0.05em"}}>DATA STUDIO</div>
+          <div style={{fontSize:9,color:T.faint,letterSpacing:"0.08em"}}>POWERED BY GROQ AI · PNG EXPORT · ANOMALY AI · DATE INTEL · GOAL ANALYSIS · SEGMENTS · CORRELATIONS</div>
         </div>
         {files.length>0&&(
           <div style={{display:"flex",gap:4,marginLeft:8,overflowX:"auto"}}>
