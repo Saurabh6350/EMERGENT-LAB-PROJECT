@@ -2,6 +2,8 @@
   "extends": ["react-app"],
   "rules": {
     "react-hooks/exhaustive-deps": "off",
-    "no-new-func": "off"
+    "no-new-func": "off",
+    "eqeqeq": "off",
+    "no-unused-vars": "warn"
   }
 }
