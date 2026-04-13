@@ -138,7 +138,7 @@ function executeSimpleSQL(sql,rows){
   const whereMatch=sql.match(/WHERE\s+(.+?)(?:\s+GROUP BY|\s+ORDER BY|\s+LIMIT|$)/i);
   if(whereMatch){
     const m=whereMatch[1].trim().match(/(\w+)\s*(=|!=|>|<|>=|<=|LIKE)\s*'?([^']+)'?/i);
-    if(m){const[,col,op,val]=m;result=result.filter(r=>{const rv=r[col];const nv=Number(val);if(op==="=")return rv===String(val)||Number(rv)===Number(val);if(op==="!=")return rv!==String(val)&&Number(rv)!==Number(val);if(op===">")return Number(rv)>nv;if(op==="<")return Number(rv)<nv;if(op===">=")return Number(rv)>=nv;if(op==="<=")return Number(rv)<=nv;if(op.toUpperCase()==="LIKE")return String(rv).toLowerCase().includes(val.toLowerCase().replace(/%/g,""));return true;});}
+    if(m){const[,col,op,val]=m;result=result.filter(r=>{const rv=r[col];const nv=Number(val);if(op==="=")return rv==val;if(op==="!=")return rv!=val;if(op===">")return Number(rv)>nv;if(op==="<")return Number(rv)<nv;if(op===">=")return Number(rv)>=nv;if(op==="<=")return Number(rv)<=nv;if(op.toUpperCase()==="LIKE")return String(rv).toLowerCase().includes(val.toLowerCase().replace(/%/g,""));return true;});}
   }
   const groupMatch=sql.match(/GROUP BY\s+(\w+)/i);
   const selectMatch=sql.match(/SELECT\s+(.+?)\s+FROM/i);
